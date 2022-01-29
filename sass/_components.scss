@@ -1,0 +1,38 @@
+@import 'variables';
+
+// Navbar
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  vertical-align: middle;
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 5rem;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+
+  list-style: none;
+}
+
+.nav__link {
+  color: $color-text;
+}
+
+.nav__link--btn {
+  background-color: $color-main;
+  padding: 1.3rem 2.5rem;
+  border-radius: 2rem;
+  transition: all 0.2s;
+}
+
+.nav__link--btn:hover {
+  background-color: $color-hover;
+}
