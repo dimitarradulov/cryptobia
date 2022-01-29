@@ -13,7 +13,21 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
-  background-color: #16161a; }
+  background-color: #16161a;
+  color: #fffffe; }
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #1c74e9; }
+
+.nav {
+  display: flex;
+  justify-content: space-between; }
+
+.nav__links {
+  display: flex;
+  list-style: none; }
 
 .wrapper {
   max-width: 90%;
