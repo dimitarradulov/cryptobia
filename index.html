@@ -20,11 +20,16 @@
     <script defer src="./js/script.js"></script>
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="header">
       <div class="wrapper">
         <nav class="nav">
-          <a href="index.html">
-            <img src="img/logo.svg" class="nav__logo" alt="Cryptobia Logo" />
+          <a href="#header">
+            <img
+              src="img/logo.svg"
+              draggable="false"
+              class="nav__logo"
+              alt="Cryptobia Logo"
+            />
           </a>
           <ul class="nav__links">
             <li class="nav__item">
@@ -41,6 +46,23 @@
             </li>
           </ul>
         </nav>
+
+        <div class="header__hero">
+          <div class="header__title-container">
+            <h1 class="header__title">Come To Life. Come To Cryptocurrency.</h1>
+            <h3 class="header__subtitle">
+              The easiest place to buy and sell cryptocurrency.
+            </h3>
+            <a class="header__link" href="#">Learn More &#129043;</a>
+          </div>
+          <div class="header__image-container">
+            <img
+              src="img/hero-img.jpg"
+              class="header__image"
+              alt="Header Img"
+            />
+          </div>
+        </div>
       </div>
     </header>
   </body>

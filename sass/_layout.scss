@@ -5,5 +5,44 @@
 }
 
 .header {
-  padding-top: 3rem;
+  height: 100vh;
+
+  &__hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10rem;
+  }
+
+  &__title-container {
+    max-width: 53.1rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 5rem;
+    line-height: 1.3;
+    margin-bottom: 3rem;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 5rem;
+  }
+
+  &__link {
+    border-bottom: 1px solid $color-main;
+  }
+
+  &__image-container {
+    max-width: 82.6rem;
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2rem;
+  }
 }

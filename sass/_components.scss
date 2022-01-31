@@ -5,34 +5,38 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+  height: 9rem;
 
-.nav__logo {
-  vertical-align: middle;
-}
+  &__logo {
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+  }
 
-.nav__item:not(:last-child) {
-  margin-right: 5rem;
-}
+  &__item:not(:last-child) {
+    margin-right: 5rem;
+  }
 
-.nav__links {
-  display: flex;
-  align-items: center;
+  &__links {
+    display: flex;
+    align-items: center;
 
-  list-style: none;
-}
+    list-style: none;
+  }
 
-.nav__link {
-  color: $color-text;
-}
+  &__link {
+    color: $color-text;
 
-.nav__link--btn {
-  background-color: $color-main;
-  padding: 1.3rem 2.5rem;
-  border-radius: 2rem;
-  transition: all 0.2s;
-}
+    &--btn {
+      background-color: $color-main;
+      padding: 1.3rem 2.5rem;
+      border-radius: 2rem;
+      transition: all 0.2s;
+    }
 
-.nav__link--btn:hover {
-  background-color: $color-hover;
+    &--btn:hover {
+      background-color: $color-hover;
+    }
+  }
 }
