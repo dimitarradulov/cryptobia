@@ -25,7 +25,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 9rem; }
+  height: 9rem;
+  z-index: 100; }
   .nav__logo {
     -webkit-user-select: none;
     /* Chrome all / Safari all */
@@ -34,9 +35,12 @@ a {
     -ms-user-select: none;
     /* IE 10+ */
     user-select: none;
-    /* Likely future */ }
-  .nav__item:not(:last-child) {
+    /* Likely future */
+    vertical-align: middle; }
+  .nav__item {
     margin-right: 5rem; }
+  .nav__item:last-child {
+    margin-right: 0; }
   .nav__links {
     display: flex;
     align-items: center;
@@ -50,6 +54,40 @@ a {
       transition: all 0.2s; }
     .nav__link--btn:hover {
       background-color: #043fc9; }
+  .nav__hamburger {
+    display: none;
+    cursor: pointer; }
+  .nav__bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #fffffe; }
+
+@media only screen and (max-width: 992px) {
+  .nav__hamburger {
+    display: block; }
+    .nav__hamburger.active .nav__bar:nth-child(2) {
+      opacity: 0; }
+    .nav__hamburger.active .nav__bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg); }
+    .nav__hamburger.active .nav__bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg); }
+  .nav__links {
+    position: absolute;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    background-color: #16161a; }
+    .nav__links.active {
+      left: 0; }
+  .nav__item {
+    margin: 16px 0; } }
 
 .wrapper {
   max-width: 90%;
@@ -83,3 +121,39 @@ a {
     max-width: 100%;
     height: auto;
     border-radius: 2rem; }
+
+@media only screen and (max-width: 1600px) {
+  .header__image-container {
+    max-width: 70rem; } }
+
+@media only screen and (max-width: 1400px) {
+  .header__image-container {
+    max-width: 60rem; }
+  .header__title {
+    font-size: 4.5rem; }
+  .header__subtitle {
+    font-size: 2rem; } }
+
+@media only screen and (max-width: 992px) {
+  .header__hero {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: baseline;
+    margin-top: 5rem; }
+  .header__title-container, .header__image-container {
+    max-width: 100%; }
+  .header__title-container {
+    margin-bottom: 5rem; }
+  .header__title {
+    font-size: 4rem; }
+  .header__subtitle {
+    margin-bottom: 4rem; }
+  .header__image {
+    width: 70rem; } }
+
+@media only screen and (max-width: 576px) {
+  .header__title {
+    font-size: 3.5rem; }
+  .header__subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 3rem; } }
