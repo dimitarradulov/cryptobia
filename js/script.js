@@ -4,6 +4,8 @@
 const hamburger = document.querySelector('.nav__hamburger');
 const navLinks = document.querySelector('.nav__links');
 const nav = document.querySelector('.nav');
+const features = document.querySelector('#features-section');
+const learnMore = document.querySelector('.btn--scroll');
 
 // ********** Event Listeners **********
 
@@ -15,23 +17,32 @@ hamburger.addEventListener('click', () => {
 
 // Navigation Fade Effect
 const handleHover = function (e) {
-  if (e.target.tagName == 'A' || e.target.tagName == 'IMG') {
+  if (e.target.classList.contains('nav__link')) {
     const hoveredEl = e.target;
     const siblings = e.target.closest('.nav').querySelectorAll('.nav__link');
-    const logo = e.target.closest('.nav').querySelector('img');
 
-    if (hoveredEl === logo) {
-      siblings.forEach((item) => (item.style.opacity = this));
-    } else {
-      siblings.forEach((item) => {
-        if (hoveredEl !== item) {
-          item.style.opacity = this;
-          logo.style.opacity = this;
-        }
-      });
-    }
+    siblings.forEach((item) => {
+      if (hoveredEl !== item) {
+        item.style.opacity = this;
+      }
+    });
   }
 };
 
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
+
+// Smooth Scrolling
+nav.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains('nav__link')) {
+    let link = e.target;
+    if (link.tagName == 'IMG') link = e.target.closest('a');
+    const sectionHref = link.getAttribute('href');
+    document.querySelector(sectionHref).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+learnMore.addEventListener('click', () => {
+  features.scrollIntoView({ behavior: 'smooth' });
+});
