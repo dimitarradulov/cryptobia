@@ -26,7 +26,7 @@
     <script defer src="./js/script.js"></script>
   </head>
   <body>
-    <header class="header" id="header">
+    <header class="header" id="header-section">
       <div class="wrapper">
         <nav class="nav">
           <a href="#header">
@@ -40,7 +40,7 @@
           </a>
           <ul class="nav__links">
             <li class="nav__item">
-              <a href="#" class="nav__link">Features</a>
+              <a href="#features-section" class="nav__link">Features</a>
             </li>
             <li class="nav__item">
               <a href="#" class="nav__link">How It Works</a>
@@ -67,15 +67,82 @@
             </h3>
             <a class="header__link" href="#">Learn More &#129043;</a>
           </div>
-          <div class="header__image-container">
+          <div class="header__image">
             <img
               src="img/hero-img.jpg"
-              class="header__image"
+              class="responsive-image"
               alt="Header Img"
             />
           </div>
         </div>
       </div>
     </header>
+
+    <section class="section section--background" id="features-section">
+      <div class="wrapper">
+        <div class="section__title">
+          <h3 class="section__heading">Features</h3>
+          <h2 class="section__description">
+            Start your cryptocurrency portfolio as soon as today.
+          </h2>
+        </div>
+
+        <div class="features">
+          <div class="features__feature">
+            <h3 class="features__title">Secure storage</h3>
+            <p class="features__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est mi
+              faucibus nec, nibh purus odio neque, ut aenean. Pharetra amet,
+              amet, accumsan scelerisque. Varius netus imperdiet quam sed amet
+              ac. Justo aliquam a non enim pellentesque et tempus.
+            </p>
+          </div>
+          <div class="features__image features__image--overlay">
+            <img
+              src="img/feature1.jpg"
+              class="responsive-image"
+              alt="Feature 1"
+            />
+          </div>
+
+          <div class="features__feature">
+            <h3 class="features__title">Protected by insurance</h3>
+            <p class="features__description">
+              Id ut suscipit aenean dictum scelerisque amet proin morbi in
+              lectus aliquet phasellus commodo facilisi dui, ullamcorper tellus
+              aenean augue porttitor ultrices netus auctor pellentesque
+              vestibulum feugiat proin faucibus egestas bibendum hac blandit
+              amet ipsum, imperdiet laoreet sed
+            </p>
+          </div>
+          <div class="features__image features__image--overlay">
+            <img
+              src="img/feature2.jpg"
+              class="responsive-image"
+              alt="Feature 2"
+            />
+            <div class="overlay"></div>
+          </div>
+
+          <div class="features__feature">
+            <h3 class="features__title">Industry best practices</h3>
+            <p class="features__description">
+              Duis diam quam eget justo, id pellentesque non mattis amet congue
+              adipiscing maecenas ultrices purus quis vitae tortor ligula
+              sapien, at tempor, ornare purus elementum non tempus malesuada
+              cursus potenti cursus diam facilisis volutpat nunc massa enim,
+              vitae
+            </p>
+          </div>
+          <div class="features__image features__image--overlay">
+            <img
+              src="img/feature3.jpg"
+              class="responsive-image"
+              alt="Feature 3"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
