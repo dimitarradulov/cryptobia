@@ -63,6 +63,50 @@
   }
 }
 
+// Section
+.section {
+  padding: 12rem 0;
+  transition: all 1s;
+
+  &--background {
+    background-color: $color-background-secondary;
+  }
+
+  &__title {
+    max-width: 85.6rem;
+    margin: 0 auto 8rem auto;
+  }
+
+  &__heading {
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 144%;
+    text-transform: uppercase;
+    color: $color-main;
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+    font-weight: 500;
+    font-size: 4.4rem;
+    line-height: 128%;
+  }
+}
+
+// Buttons
+.btn--scroll {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $color-main;
+  color: $color-main;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding-bottom: 0.3rem;
+}
+
+// Media Queries
 @media only screen and (max-width: 992px) {
   .nav {
     &__hamburger {

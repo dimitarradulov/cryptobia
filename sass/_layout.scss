@@ -20,35 +20,6 @@
   left: 0;
 }
 
-// Sections General
-.section {
-  padding: 12rem 0;
-
-  &--background {
-    background-color: $color-background-secondary;
-  }
-
-  &__title {
-    max-width: 85.6rem;
-    margin: 0 auto 8rem auto;
-  }
-
-  &__heading {
-    font-weight: 400;
-    font-size: 2rem;
-    line-height: 144%;
-    text-transform: uppercase;
-    color: $color-main;
-    margin-bottom: 1.5rem;
-  }
-
-  &__description {
-    font-weight: 500;
-    font-size: 4.4rem;
-    line-height: 128%;
-  }
-}
-
 // Header / Hero Section
 .header {
   min-height: 100vh;
