@@ -256,7 +256,10 @@ p {
       max-width: 100%; }
     .features__image {
       max-width: 100%;
-      margin: 3rem 0 6rem 0; } }
+      margin-top: 3rem;
+      margin-bottom: 6rem; }
+      .features__image:last-child {
+        margin-bottom: 0; } }
 
 @media only screen and (max-width: 576px) {
   .header__title {
