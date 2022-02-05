@@ -26,7 +26,7 @@
     margin-right: 0;
   }
 
-  &__links {
+  &__menu {
     display: flex;
     align-items: center;
 
@@ -70,6 +70,11 @@
 
   &--background {
     background-color: $color-background-secondary;
+  }
+
+  &--hidden {
+    opacity: 0;
+    transform: translateY(8rem);
   }
 
   &__title {
@@ -123,7 +128,7 @@
       }
     }
 
-    &__links {
+    &__menu {
       position: absolute;
       left: -100%;
       top: 70px;
