@@ -2,17 +2,23 @@
 
 // ********** Elements **********
 const hamburger = document.querySelector('.nav__hamburger');
-const navLinks = document.querySelector('.nav__links');
+const navMenu = document.querySelector('.nav__menu');
 const nav = document.querySelector('.nav');
 const features = document.querySelector('#features-section');
 const learnMore = document.querySelector('.btn--scroll');
-
-// ********** Event Listeners **********
+const sections = document.querySelectorAll('.section');
 
 // Hamburger Menu
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
-  navLinks.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
+navMenu.addEventListener('click', function (e) {
+  if (!e.target.classList.contains('nav__link')) return;
+
+  hamburger.classList.remove('active');
+  this.classList.remove('active');
 });
 
 // Navigation Fade Effect
@@ -45,4 +51,24 @@ nav.addEventListener('click', (e) => {
 
 learnMore.addEventListener('click', () => {
   features.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Sections Reveal
+const options = {
+  root: null,
+  threshold: 0.1,
+};
+
+const observerCallback = (entries) => {
+  const [entry] = entries;
+
+  if (entry.isIntersecting) {
+    entry.target.classList.remove('section--hidden');
+  }
+};
+
+const observer = new IntersectionObserver(observerCallback, options);
+
+sections.forEach((s) => {
+  observer.observe(s);
 });
