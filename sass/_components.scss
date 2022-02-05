@@ -89,6 +89,7 @@
     text-transform: uppercase;
     color: $color-main;
     margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
   }
 
   &__description {
@@ -146,6 +147,18 @@
 
     &__item {
       margin: 16px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .section {
+    &__heading {
+      font-size: 1.8rem;
+    }
+
+    &__description {
+      font-size: 3.5rem;
     }
   }
 }

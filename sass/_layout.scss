@@ -38,6 +38,7 @@
 
   &__title-container {
     max-width: 53.1rem;
+    margin-right: 5rem;
   }
 
   &__title {
@@ -139,27 +140,27 @@
 }
 
 // Media Queries
-@media only screen and (max-width: 1600px) {
-  .header__image {
-    max-width: 70rem;
-  }
-}
+// @media only screen and (max-width: 1600px) {
+//   .header__image {
+//     max-width: 70rem;
+//   }
+// }
 
-@media only screen and (max-width: 1400px) {
-  .header {
-    &__image {
-      max-width: 60rem;
-    }
+// @media only screen and (max-width: 1400px) {
+//   .header {
+//     &__image {
+//       max-width: 60rem;
+//     }
 
-    &__title {
-      font-size: 4.5rem;
-    }
+//     &__title {
+//       font-size: 4.5rem;
+//     }
 
-    &__subtitle {
-      font-size: 2rem;
-    }
-  }
-}
+//     &__subtitle {
+//       font-size: 2rem;
+//     }
+//   }
+// }
 
 @media only screen and (max-width: 992px) {
   .header {
@@ -220,6 +221,12 @@
     &__subtitle {
       font-size: 1.8rem;
       margin-bottom: 3rem;
+    }
+  }
+
+  .features {
+    &__title {
+      font-size: 2.5rem;
     }
   }
 }

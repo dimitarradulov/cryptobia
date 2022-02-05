@@ -24,6 +24,10 @@ a {
 p {
   line-height: 1.6; }
 
+@media only screen and (max-width: 576px) {
+  P {
+    font-size: 1.5rem; } }
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -87,7 +91,8 @@ p {
     line-height: 144%;
     text-transform: uppercase;
     color: #1c74e9;
-    margin-bottom: 1.5rem; }
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em; }
   .section__description {
     font-weight: 500;
     font-size: 4.4rem;
@@ -128,6 +133,12 @@ p {
   .nav__item {
     margin: 16px 0; } }
 
+@media only screen and (max-width: 576px) {
+  .section__heading {
+    font-size: 1.8rem; }
+  .section__description {
+    font-size: 3.5rem; } }
+
 .wrapper {
   max-width: 90%;
   margin-left: auto;
@@ -159,7 +170,8 @@ p {
     margin-top: 10rem;
     padding-bottom: 12rem; }
   .header__title-container {
-    max-width: 53.1rem; }
+    max-width: 53.1rem;
+    margin-right: 5rem; }
   .header__title {
     font-weight: 600;
     font-size: 5rem;
@@ -222,18 +234,6 @@ p {
       top: 0;
       left: 0; }
 
-@media only screen and (max-width: 1600px) {
-  .header__image {
-    max-width: 70rem; } }
-
-@media only screen and (max-width: 1400px) {
-  .header__image {
-    max-width: 60rem; }
-  .header__title {
-    font-size: 4.5rem; }
-  .header__subtitle {
-    font-size: 2rem; } }
-
 @media only screen and (max-width: 992px) {
   .header__hero {
     flex-direction: column;
@@ -266,4 +266,6 @@ p {
     font-size: 3.5rem; }
   .header__subtitle {
     font-size: 1.8rem;
-    margin-bottom: 3rem; } }
+    margin-bottom: 3rem; }
+  .features__title {
+    font-size: 2.5rem; } }
