@@ -138,6 +138,9 @@ p {
   height: auto;
   border-radius: 2rem; }
 
+.lazy-img {
+  filter: blur(20px); }
+
 .overlay {
   position: absolute;
   width: 100%;

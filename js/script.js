@@ -7,6 +7,7 @@ const nav = document.querySelector('.nav');
 const features = document.querySelector('#features-section');
 const learnMore = document.querySelector('.btn--scroll');
 const sections = document.querySelectorAll('.section');
+const images = document.querySelectorAll('.feature-image');
 
 // Hamburger Menu
 hamburger.addEventListener('click', () => {
@@ -54,21 +55,54 @@ learnMore.addEventListener('click', () => {
 });
 
 // Sections Reveal
-const options = {
+const sectionObserverOptions = {
   root: null,
   threshold: 0.1,
 };
 
-const observerCallback = (entries) => {
+const sectionObserverCb = (entries) => {
   const [entry] = entries;
 
   if (entry.isIntersecting) {
     entry.target.classList.remove('section--hidden');
+
+    sectionObserver.unobserve(entry.target);
   }
 };
 
-const observer = new IntersectionObserver(observerCallback, options);
+const sectionObserver = new IntersectionObserver(
+  sectionObserverCb,
+  sectionObserverOptions
+);
 
 sections.forEach((s) => {
-  observer.observe(s);
+  sectionObserver.observe(s);
 });
+
+// Lazy Loading Img
+const imageObserverOptions = {
+  root: null,
+  threshold: 0.3,
+};
+
+const imageObserverCb = (entries) => {
+  const [entry] = entries;
+
+  if (entry.isIntersecting) {
+    const imageNum = entry.target.dataset.image;
+    entry.target.setAttribute('src', `img/feature${imageNum}.jpg`);
+
+    entry.target.addEventListener('load', () =>
+      entry.target.classList.remove('lazy-img')
+    );
+
+    imageObserver.unobserve(entry.target);
+  }
+};
+
+const imageObserver = new IntersectionObserver(
+  imageObserverCb,
+  imageObserverOptions
+);
+
+images.forEach((img) => imageObserver.observe(img));
