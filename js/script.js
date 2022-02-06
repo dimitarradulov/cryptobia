@@ -8,6 +8,7 @@ const features = document.querySelector('#features-section');
 const learnMore = document.querySelector('.btn--scroll');
 const sections = document.querySelectorAll('.section');
 const images = document.querySelectorAll('.feature-image');
+const header = document.querySelector('.header');
 
 // Hamburger Menu
 hamburger.addEventListener('click', () => {
@@ -106,3 +107,18 @@ const imageObserver = new IntersectionObserver(
 );
 
 images.forEach((img) => imageObserver.observe(img));
+
+// Sticky Navigation
+const headerObserverCb = (entries) => {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+
+const headerObserver = new IntersectionObserver(headerObserverCb, {
+  root: null,
+  threshold: 0.1,
+});
+
+headerObserver.observe(header);
