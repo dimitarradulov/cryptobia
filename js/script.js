@@ -9,6 +9,9 @@ const learnMore = document.querySelector('.btn--scroll');
 const sections = document.querySelectorAll('.section');
 const images = document.querySelectorAll('.feature-image');
 const header = document.querySelector('.header');
+const howItWorks = document.querySelector('.how-it-works');
+const howItWorksTabs = document.querySelectorAll('.how-it-works__tab');
+const howItWorksContents = document.querySelectorAll('.how-it-works__content');
 
 // Hamburger Menu
 hamburger.addEventListener('click', () => {
@@ -122,3 +125,24 @@ const headerObserver = new IntersectionObserver(headerObserverCb, {
 });
 
 headerObserver.observe(header);
+
+// Tabbed
+howItWorks.addEventListener('click', (e) => {
+  if (!e.target.classList.contains('how-it-works__tab')) return;
+
+  const tab = e.target;
+
+  howItWorksTabs.forEach((tab) =>
+    tab.classList.remove('how-it-works__tab--active')
+  );
+  tab.classList.add('how-it-works__tab--active');
+
+  const tabNumber = tab.dataset.tab;
+
+  howItWorksContents.forEach((content) =>
+    content.classList.remove('how-it-works__content--active')
+  );
+  document
+    .querySelector(`.how-it-works__content--${tabNumber}`)
+    .classList.add('how-it-works__content--active');
+});
