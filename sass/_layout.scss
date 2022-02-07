@@ -33,6 +33,13 @@
   background: $color-background;
 }
 
+.title {
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 120%;
+  margin-bottom: 3rem;
+}
+
 // Header / Hero Section
 .header {
   min-height: 100vh;
@@ -112,17 +119,6 @@
     }
   }
 
-  &__title {
-    font-weight: 500;
-    font-size: 3rem;
-    line-height: 120%;
-    margin-bottom: 3rem;
-  }
-
-  &__description {
-    color: $color-paragraph;
-  }
-
   &__image {
     overflow: hidden;
     max-width: 82.5rem;
@@ -148,28 +144,60 @@
   }
 }
 
-// Media Queries
-// @media only screen and (max-width: 1600px) {
-//   .header__image {
-//     max-width: 70rem;
-//   }
-// }
+// How It Works
+.how-it-works {
+  background-color: $color-background-secondary;
+  max-width: 102rem;
+  margin-left: auto;
+  margin-right: auto;
 
-// @media only screen and (max-width: 1400px) {
-//   .header {
-//     &__image {
-//       max-width: 60rem;
-//     }
+  &__tab-container {
+    display: flex;
+    justify-content: center;
+  }
 
-//     &__title {
-//       font-size: 4.5rem;
-//     }
+  &__tab {
+    padding: 1.1rem 0;
+    width: 22rem;
+    margin-right: 4rem;
+    transform: translateY(-50%);
 
-//     &__subtitle {
-//       font-size: 2rem;
-//     }
-//   }
-// }
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+      transform: translateY(-66%);
+    }
+  }
+
+  &__content {
+    display: none;
+    padding: 5rem 5.2rem 6.5rem 5.2rem;
+
+    &--active {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      column-gap: 3rem;
+      row-gap: 0.5rem;
+    }
+  }
+
+  &__text {
+    max-width: 70.5rem;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6.6rem;
+    height: 6.6rem;
+    border-radius: 50%;
+    background-color: $color-main;
+    opacity: 70%;
+  }
+}
 
 @media only screen and (max-width: 992px) {
   .header {
@@ -233,9 +261,31 @@
     }
   }
 
-  .features {
-    &__title {
-      font-size: 2.5rem;
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .how-it-works {
+    &__tab-container {
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+
+    &__tab {
+      width: 20rem;
+    }
+
+    &__icon {
+      display: none;
+    }
+
+    &__content {
+      display: none;
+      padding: 1rem 2rem 6.5rem 2rem;
+
+      &--active {
+        display: block;
+      }
     }
   }
 }
