@@ -79,7 +79,13 @@
 
   &__title {
     max-width: 85.6rem;
-    margin: 0 auto 8rem auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 8rem;
+
+    &--mb {
+      margin-bottom: 12rem;
+    }
   }
 
   &__heading {
