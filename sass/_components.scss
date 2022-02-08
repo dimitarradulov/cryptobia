@@ -230,6 +230,75 @@
   }
 }
 
+// Modal
+.modal {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 1rem;
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal-container {
+    position: relative;
+
+    color: $color-background;
+    background-color: $color-text;
+    padding: 4rem 2rem;
+    width: 55rem;
+
+    & .title {
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 3%;
+      top: 3%;
+
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: $color-background;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+
+    & label,
+    input {
+      font-family: inherit;
+    }
+
+    & label {
+      font-weight: 500;
+    }
+
+    & input {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+  }
+
+  .btn--form {
+    margin-top: 1.5rem;
+  }
+}
+
 // // Media Queries
 // @media only screen and (min-width: 1400px) {
 //   .slider {

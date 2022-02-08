@@ -192,6 +192,54 @@ p {
     .dots__dot--active {
       color: inherit; }
 
+.modal {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 1rem;
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .modal .modal-container {
+    position: relative;
+    color: #16161a;
+    background-color: #fffffe;
+    padding: 4rem 2rem;
+    width: 55rem; }
+    .modal .modal-container .title {
+      text-align: center;
+      font-weight: 600; }
+    .modal .modal-container .modal-close {
+      position: absolute;
+      right: 3%;
+      top: 3%;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: #16161a; }
+  .modal__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto; }
+    .modal__form label,
+    .modal__form input {
+      font-family: inherit; }
+    .modal__form label {
+      font-weight: 500; }
+    .modal__form input {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ddd; }
+  .modal .btn--form {
+    margin-top: 1.5rem; }
+
 @media only screen and (max-width: 992px) {
   .nav__hamburger {
     display: block; }
@@ -265,6 +313,9 @@ p {
   font-size: 3rem;
   line-height: 120%;
   margin-bottom: 3rem; }
+
+.hidden {
+  display: none; }
 
 .header {
   min-height: 100vh; }

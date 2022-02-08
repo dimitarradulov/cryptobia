@@ -12,6 +12,7 @@ const header = document.querySelector('.header');
 const howItWorks = document.querySelector('.how-it-works');
 const howItWorksTabs = document.querySelectorAll('.how-it-works__tab');
 const howItWorksContents = document.querySelectorAll('.how-it-works__content');
+const getStartedBtn = document.querySelector('.nav__link--btn');
 
 // Hamburger Menu
 hamburger.addEventListener('click', () => {
@@ -233,3 +234,22 @@ const slider = () => {
 };
 
 slider();
+
+// Modal
+const modal = document.querySelector('.modal');
+
+const showModal = () => modal.classList.remove('hidden');
+const hideModal = () => modal.classList.add('hidden');
+
+getStartedBtn.addEventListener('click', showModal);
+modal.addEventListener('click', (e) => {
+  if (e.target.classList.contains('fas')) hideModal();
+
+  if (e.target.classList.contains('modal')) hideModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    hideModal();
+  }
+});
