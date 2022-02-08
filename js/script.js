@@ -121,7 +121,7 @@ const headerObserverCb = (entries) => {
 
 const headerObserver = new IntersectionObserver(headerObserverCb, {
   root: null,
-  threshold: 0.1,
+  threshold: 0,
 });
 
 headerObserver.observe(header);
@@ -146,3 +146,90 @@ howItWorks.addEventListener('click', (e) => {
     .querySelector(`.how-it-works__content--${tabNumber}`)
     .classList.add('how-it-works__content--active');
 });
+
+// Testimonial Slider
+const slider = () => {
+  const rightArrow = document.querySelector('.slider__arrow--right');
+  const leftArrow = document.querySelector('.slider__arrow--left');
+  const slideContainer = document.querySelector('.slide-container');
+  const dotContainer = document.querySelector('.dots');
+
+  let slides;
+  let sizeOfSlide;
+  let slideCounter = 0;
+
+  const setSlidesAndSizeOfSlide = () => {
+    slides = document.querySelectorAll('.slider__slide');
+    sizeOfSlide = slides[0].clientWidth;
+  };
+
+  setSlidesAndSizeOfSlide();
+
+  const createDots = () => {
+    slides.forEach((_, i) => {
+      dotContainer.insertAdjacentHTML(
+        'beforeend',
+        `
+      <button class="dots__dot" data-slide="${i}">
+        <i class="fas fa-circle fa-xs"></i>
+      </button>
+    `
+      );
+    });
+  };
+
+  createDots();
+
+  const activateDot = (slide) => {
+    document
+      .querySelectorAll('.dots__dot')
+      .forEach((dot) => dot.classList.remove('dots__dot--active'));
+    document
+      .querySelector(`.dots__dot[data-slide="${slide}"]`)
+      .classList.add('dots__dot--active');
+  };
+
+  activateDot(slideCounter);
+
+  const moveSlide = (slide) => {
+    // prettier-ignore
+    return slideContainer.style.transform = `translateX(${-sizeOfSlide * slide}px)`;
+  };
+
+  const maxSlides = slides.length - 1;
+
+  const nextSlide = () => {
+    if (slideCounter === maxSlides) slideCounter = 0;
+    else slideCounter++;
+
+    moveSlide(slideCounter);
+    activateDot(slideCounter);
+  };
+
+  const prevSlide = () => {
+    if (slideCounter === 0) slideCounter = maxSlides;
+    else slideCounter--;
+
+    moveSlide(slideCounter);
+    activateDot(slideCounter);
+  };
+
+  window.addEventListener('resize', () => {
+    setSlidesAndSizeOfSlide();
+    moveSlide();
+  });
+
+  rightArrow.addEventListener('click', nextSlide);
+  leftArrow.addEventListener('click', prevSlide);
+
+  dotContainer.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('fas')) return;
+
+    const slide = e.target.closest('.dots__dot').dataset.slide;
+
+    moveSlide(slide);
+    activateDot(slide);
+  });
+};
+
+slider();

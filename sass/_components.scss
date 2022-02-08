@@ -135,7 +135,131 @@
   background-color: inherit;
 }
 
-// Media Queries
+// Testimonial slider
+.slider-container {
+  position: relative;
+}
+
+.slider {
+  position: relative;
+  max-width: 70rem;
+  margin: 0 auto;
+  overflow: hidden;
+
+  .slide-container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+
+    transition: transform 0.7s;
+  }
+
+  &__slide {
+    padding: 3rem;
+    background-color: $color-background;
+    border-radius: 20px;
+    flex: 1 0 100%;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: $color-paragraph;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &__author-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__author-img {
+    border-radius: 50%;
+    width: 7rem;
+    margin-right: 1rem;
+  }
+
+  &__author {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__arrow {
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-250%);
+  }
+
+  &__arrow--left {
+    left: 20%;
+  }
+
+  &__arrow--right {
+    right: 20%;
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+
+  &__dot {
+    background: none;
+    border: none;
+    margin-right: 1.5rem;
+    color: $color-paragraph;
+    cursor: pointer;
+    margin-top: 3rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--active {
+      color: inherit;
+    }
+  }
+}
+
+// // Media Queries
+// @media only screen and (min-width: 1400px) {
+//   .slider {
+//     &__arrow--left {
+//       left: 19%;
+//     }
+
+//     &__arrow--right {
+//       right: 19%;
+//     }
+//   }
+// }
+
+// @media only screen and (min-width: 993px) {
+//   .slider {
+//     &__slide {
+//       max-width: 70rem;
+//       margin: 0 auto;
+//     }
+//   }
+// }
+
+// @media only screen and (min-width: 1200px) {
+//   .slider {
+//     &__slide {
+//       padding: 0 20rem;
+//     }
+//   }
+// }
+
 @media only screen and (max-width: 992px) {
   .nav {
     &__hamburger {
@@ -172,6 +296,16 @@
       margin: 16px 0;
     }
   }
+
+  .slider {
+    &__arrow--left {
+      left: 0;
+    }
+
+    &__arrow--right {
+      right: 0;
+    }
+  }
 }
 
 @media only screen and (max-width: 576px) {
@@ -182,6 +316,16 @@
 
     &__description {
       font-size: 3.5rem;
+    }
+  }
+
+  .slider {
+    &__arrow--left {
+      left: 0;
+    }
+
+    &__arrow--right {
+      right: 0;
     }
   }
 }
