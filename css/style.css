@@ -246,6 +246,31 @@ p {
   .modal .btn--form {
     margin-top: 1.5rem; }
 
+.footer__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center; }
+
+.footer__item {
+  margin-right: 5rem; }
+  .footer__item:last-child {
+    margin-right: 0; }
+
+.footer__link {
+  color: #fffffe; }
+
+.footer__logo {
+  display: block;
+  max-width: 6rem;
+  height: auto;
+  margin: 5rem auto; }
+
+.footer__copyright {
+  font-size: 1.4rem;
+  color: #94a1b2;
+  letter-spacing: 1px;
+  text-align: center; }
+
 @media only screen and (max-width: 992px) {
   .nav__hamburger {
     display: block; }
@@ -282,7 +307,15 @@ p {
   .slider__arrow--left {
     left: 0; }
   .slider__arrow--right {
-    right: 0; } }
+    right: 0; }
+  .footer__nav {
+    flex-direction: column;
+    align-items: center; }
+  .footer__item {
+    margin-right: 0;
+    margin-bottom: 1rem; }
+    .footer__item:last-child {
+      margin: 0; } }
 
 .wrapper {
   max-width: 90%;
