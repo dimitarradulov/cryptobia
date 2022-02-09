@@ -13,6 +13,7 @@ const howItWorks = document.querySelector('.how-it-works');
 const howItWorksTabs = document.querySelectorAll('.how-it-works__tab');
 const howItWorksContents = document.querySelectorAll('.how-it-works__content');
 const getStartedBtn = document.querySelector('.nav__link--btn');
+const btnLarge = document.querySelector('.btn--lg');
 
 // Hamburger Menu
 hamburger.addEventListener('click', () => {
@@ -243,6 +244,7 @@ const showModal = () => modal.classList.remove('hidden');
 const hideModal = () => modal.classList.add('hidden');
 
 getStartedBtn.addEventListener('click', showModal);
+btnLarge.addEventListener('click', showModal);
 modal.addEventListener('click', (e) => {
   if (e.target.classList.contains('fas')) hideModal();
 

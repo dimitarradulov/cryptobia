@@ -128,6 +128,12 @@ p {
 .btn--scroll:hover {
   background-color: inherit; }
 
+.btn--lg {
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  padding: 2rem 6rem; }
+
 .slider-container {
   position: relative; }
 
@@ -316,6 +322,9 @@ p {
 
 .hidden {
   display: none; }
+
+.ta-center {
+  text-align: center; }
 
 .header {
   min-height: 100vh; }
