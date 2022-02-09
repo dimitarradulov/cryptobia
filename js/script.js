@@ -51,6 +51,7 @@ nav.addEventListener('click', (e) => {
     let link = e.target;
     if (link.tagName == 'IMG') link = e.target.closest('a');
     const sectionHref = link.getAttribute('href');
+    if (sectionHref === '#') return;
     document.querySelector(sectionHref).scrollIntoView({ behavior: 'smooth' });
   }
 });
