@@ -8,6 +8,15 @@
   height: 9rem;
   z-index: 100;
 
+  .nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 5vw;
+    background: $color-background;
+  }
+
   &__logo {
     -webkit-user-select: none; /* Chrome all / Safari all */
     -moz-user-select: none; /* Firefox all */
