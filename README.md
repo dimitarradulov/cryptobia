@@ -1,1 +1,12 @@
-# Cryptopbia - Crypto Trading Platform Landing Page 
+## Memory Deck - Memory Card Game
+Card game in which all of the cards are laid face down and two cards are flipped face up over each turn/move. The object of the game is to turn over pairs of matching cards.
+
+## Technologies Used
+- HTML
+- CSS
+- SASS
+- JavaScript  
+
+## Quick Preview
+You can check out the app here:
+<a href="https://cryptobia.netlify.app" target="_blank">Cryptobia</a>
