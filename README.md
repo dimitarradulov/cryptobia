@@ -4,8 +4,8 @@ Landing page for a fictional cryptocurrency trading platform.
 ![Cryptobia](./img/app-preview.JPG)
 
 ## Technologies used
-- HTML
-- CSS
+- HTML5
+- CSS3
   - SASS
 - JavaScript  
 
